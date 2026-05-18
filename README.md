@@ -1,59 +1,104 @@
-# Demo
+# Mindata Challenge
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Implementación de una landing responsive en Angular basada en un diseño de referencia, con enfoque mobile first y componentes reutilizables.
 
-## Development server
+## Stack
 
-To start a local development server, run:
+- Angular 21
+- TypeScript
+- Tailwind CSS v4
+- Vitest
+- `pnpm` como package manager
 
-```bash
-ng serve
+## Arquitectura
+
+El proyecto está organizado con una separación simple entre `features` y `shared`:
+
+```text
+src/app/
+  app.config.ts
+  app.routes.ts
+  features/
+    home/
+      home.ts
+      home.html
+      home.css
+      home.data.ts
+  shared/
+    components/
+      hero-card/
+      article-card/
+      feature-card/
+      search-input/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Criterio general
 
-## Code scaffolding
+- `features/home/`: compone la página principal y define el layout de las secciones.
+- `shared/components/`: contiene piezas visuales reutilizables y aisladas.
+- `home.data.ts`: centraliza los mocks usados para renderizar la pantalla.
+- `public/`: contiene imágenes e íconos estáticos usados por la UI.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Decisiones de implementación
 
-```bash
-ng generate component component-name
-```
+- Componentes standalone.
+- `ChangeDetectionStrategy.OnPush`.
+- Inputs tipados con la API moderna de Angular (`input.required()`).
+- Maquetación mobile first con utilidades de Tailwind.
+- HTML semántico y foco en accesibilidad base.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Cómo levantar el proyecto
 
-```bash
-ng generate --help
-```
+### Requisitos
 
-## Building
+- Node.js 20+ recomendado
+- `pnpm`
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Instalación
 
 ```bash
-ng test
+pnpm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Desarrollo
 
 ```bash
-ng e2e
+pnpm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Luego abrir:
 
-## Additional Resources
+```text
+http://localhost:4200/
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Build
+
+```bash
+pnpm build
+```
+
+### Tests
+
+```bash
+pnpm test
+```
+
+## Implementación
+
+### Desktop
+
+![Desktop implementation](./docs/images/desktop-view-implementada.png)
+
+### Tablet
+
+![Tablet implementation](./docs/images/tablet-view-implementada.png)
+
+### Mobile
+
+![Mobile implementation](./docs/images/mobile-view-implementada.png)
+
+## Notas
+
+- El proyecto prioriza maquetación, responsividad y composición de componentes.
+- La búsqueda es solo presentacional por ahora; no implementa lógica funcional.
