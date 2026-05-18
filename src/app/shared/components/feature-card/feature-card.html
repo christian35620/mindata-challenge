@@ -1,1 +1,32 @@
-<p>feature-card works!</p>
+<article class="relative isolate aspect-3/4 w-full overflow-hidden rounded-xl bg-neutral-900">
+  @if (feature().image; as image) {
+    <img [src]="image.src" [alt]="image.alt" class="size-full object-cover" loading="lazy" decoding="async" />
+  } @else {
+    <div
+      aria-hidden="true"
+      class="flex size-full items-center justify-center bg-neutral-300 text-2xl font-bold text-neutral-400"
+    >
+      IMAGE
+    </div>
+  }
+
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 bg-linear-to-t from-black via-black/45 via-35% to-black/10"
+  ></div>
+
+  <div class="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-4 text-white md:p-5">
+    <h3 class="text-2xl font-bold leading-tight md:text-3xl">
+      {{ feature().title }}
+    </h3>
+
+    <p class="text-base leading-relaxed text-white/90 md:text-lg">
+      {{ feature().description }}
+    </p>
+
+    <p class="mt-2 flex items-center gap-2 text-base font-bold">
+      <span>{{ feature().label }}</span>
+      <img alt="" aria-hidden="true" class="size-5 shrink-0" src="/icons/download.svg" />
+    </p>
+  </div>
+</article>

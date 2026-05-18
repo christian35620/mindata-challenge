@@ -1,4 +1,5 @@
 import { Article } from '../../shared/components/article-card/article-card';
+import { FeatureCardData } from '../../shared/components/feature-card/feature-card';
 
 export const HOME_ARTICLE: Article = {
   id: 'article-1',
@@ -11,5 +12,16 @@ export const HOME_ARTICLE: Article = {
     smallSrc: '/images/sample-image_small.jpg',
     mediumSrc: '/images/sample-image_medium.jpg',
     largeSrc: '/images/sample-image_large.jpg',
+  },
+};
+
+export const HOME_FEATURE: FeatureCardData = {
+  id: 'feature-1',
+  title: 'Lorem ipsum',
+  description: 'Lorem ipsum dolor sit amet consectetur.',
+  label: 'Lorem ipsum',
+  image: {
+    src: '/images/destination_small.jpg',
+    alt: 'Vista panoramica de una ciudad al atardecer.',
   },
 };
