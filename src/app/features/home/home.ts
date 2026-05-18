@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroCard } from '../../shared/components/hero-card/hero-card';
 import { ArticleCard } from '../../shared/components/article-card/article-card';
 import { FeatureCard } from '../../shared/components/feature-card/feature-card';
 import { SearchInput } from '../../shared/components/search-input/search-input';
-import { HOME_ARTICLE, HOME_FEATURE, HOME_HERO } from './home.data';
+import { HOME_ARTICLES, HOME_FEATURES, HOME_HERO } from './home.data';
 
 @Component({
   selector: 'app-home',
   imports: [HeroCard, ArticleCard, FeatureCard, SearchInput],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
   readonly hero = HOME_HERO;
-  readonly article = HOME_ARTICLE;
-  readonly feature = HOME_FEATURE;
+  readonly articles = HOME_ARTICLES;
+  readonly features = HOME_FEATURES;
 }
