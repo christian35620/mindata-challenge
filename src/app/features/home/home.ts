@@ -3,6 +3,7 @@ import { HeroCard } from '../../shared/components/hero-card/hero-card';
 import { ArticleCard } from '../../shared/components/article-card/article-card';
 import { FeatureCard } from '../../shared/components/feature-card/feature-card';
 import { SearchInput } from '../../shared/components/search-input/search-input';
+import { HOME_ARTICLE } from './home.data';
 
 @Component({
   selector: 'app-home',
@@ -10,4 +11,6 @@ import { SearchInput } from '../../shared/components/search-input/search-input';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+export class Home {
+  readonly article = HOME_ARTICLE;
+}
