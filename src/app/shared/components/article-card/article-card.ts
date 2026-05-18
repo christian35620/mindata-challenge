@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 
 export interface ArticleImage {
   alt: string;
@@ -24,4 +24,21 @@ export interface Article {
 })
 export class ArticleCard {
   readonly article = input.required<Article>();
+  private readonly imageLoadFailed = signal(false);
+  readonly image = computed(() => {
+    if (this.imageLoadFailed()) {
+      return null;
+    }
+
+    return this.article().image ?? null;
+  });
+
+  private readonly resetImageState = effect(() => {
+    this.article().image;
+    this.imageLoadFailed.set(false);
+  });
+
+  onImageError(): void {
+    this.imageLoadFailed.set(true);
+  }
 }

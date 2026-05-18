@@ -1,5 +1,21 @@
 import { Article } from '../../shared/components/article-card/article-card';
 import { FeatureCardData } from '../../shared/components/feature-card/feature-card';
+import { HeroCardData } from '../../shared/components/hero-card/hero-card';
+
+export const HOME_HERO: HeroCardData = {
+  id: 'hero-1',
+  category: 'Lorem ipsum dolor sit amet.',
+  title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit Ut et massa mi. Aliquam in hendrerit',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.',
+  ctaLabel: 'Lorem ipsum.',
+  image: {
+    alt: 'Cima de una montana nevada iluminada por la luz del amanecer.',
+    smallSrc: '/images/hero_small.jpg',
+    mediumSrc: '/images/hero_medium.jpg',
+    largeSrc: '/images/hero_large.jpg',
+  },
+};
 
 export const HOME_ARTICLE: Article = {
   id: 'article-1',

@@ -1,6 +1,13 @@
 <article class="relative isolate aspect-3/4 w-full overflow-hidden rounded-xl bg-neutral-900">
-  @if (feature().image; as image) {
-    <img [src]="image.src" [alt]="image.alt" class="size-full object-cover" loading="lazy" decoding="async" />
+  @if (image(); as image) {
+    <img
+      [src]="image.src"
+      [alt]="image.alt"
+      class="size-full object-cover"
+      loading="lazy"
+      decoding="async"
+      (error)="onImageError()"
+    />
   } @else {
     <div
       aria-hidden="true"
