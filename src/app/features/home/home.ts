@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroCard } from '../../shared/components/hero-card/hero-card';
 import { ArticleCard } from '../../shared/components/article-card/article-card';
 import { FeatureCard } from '../../shared/components/feature-card/feature-card';
@@ -10,6 +10,7 @@ import { HOME_ARTICLE, HOME_FEATURE, HOME_HERO } from './home.data';
   imports: [HeroCard, ArticleCard, FeatureCard, SearchInput],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
   readonly hero = HOME_HERO;
