@@ -48,13 +48,45 @@ export const HOME_ARTICLES: Article[] = [
   },
 ];
 
-export const HOME_FEATURE: FeatureCardData = {
-  id: 'feature-1',
-  title: 'Lorem ipsum',
-  description: 'Lorem ipsum dolor sit amet consectetur.',
-  label: 'Lorem ipsum',
-  image: {
-    src: '/images/destination_small.jpg',
-    alt: 'Vista panoramica de una ciudad al atardecer.',
+export const HOME_FEATURES: FeatureCardData[] = [
+  {
+    id: 'feature-1',
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Lorem ipsum',
+    image: {
+      src: '/images/destination_small.jpg',
+      alt: 'Vista panoramica de una ciudad al atardecer.',
+    },
   },
-};
+  {
+    id: 'feature-2',
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Lorem ipsum',
+    image: {
+      src: '/images/destination_small.jpg',
+      alt: 'Vista panoramica de una ciudad al atardecer.',
+    },
+  },
+  {
+    id: 'feature-3',
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Lorem ipsum',
+    image: {
+      src: '/images/destination_small.jpg',
+      alt: 'Vista panoramica de una ciudad al atardecer.',
+    },
+  },
+  {
+    id: 'feature-4',
+    title: 'Lorem ipsum',
+    description: 'Lorem ipsum dolor sit amet consectetur.',
+    label: 'Lorem ipsum',
+    image: {
+      src: '/images/destination_small.jpg',
+      alt: 'Vista panoramica de una ciudad al atardecer.',
+    },
+  },
+];
