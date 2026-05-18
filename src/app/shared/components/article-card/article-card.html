@@ -1,5 +1,5 @@
 <article class="flex h-full flex-col">
-  @if (article().image; as image) {
+  @if (image(); as image) {
     <div class="relative aspect-video w-full overflow-hidden rounded">
       <picture>
         <source media="(min-width: 1024px)" [srcset]="image.largeSrc" />
@@ -9,8 +9,7 @@
           [alt]="image.alt"
           class="size-full object-cover"
           decoding="async"
-          loading="lazy"
-          sizes="(min-width: 1024px) 22rem, (min-width: 768px) 45vw, 100vw"
+          (error)="onImageError()"
         />
       </picture>
     </div>

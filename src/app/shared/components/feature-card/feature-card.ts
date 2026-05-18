@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 
 export interface FeatureCardImage {
   src: string;
@@ -22,4 +22,21 @@ export interface FeatureCardData {
 })
 export class FeatureCard {
   readonly feature = input.required<FeatureCardData>();
+  private readonly imageLoadFailed = signal(false);
+  readonly image = computed(() => {
+    if (this.imageLoadFailed()) {
+      return null;
+    }
+
+    return this.feature().image ?? null;
+  });
+
+  private readonly resetImageState = effect(() => {
+    this.feature().image;
+    this.imageLoadFailed.set(false);
+  });
+
+  onImageError(): void {
+    this.imageLoadFailed.set(true);
+  }
 }
